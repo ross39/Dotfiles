@@ -28,3 +28,9 @@ vim.api.nvim_set_keymap('n', 'gi', "<Plug>(coc-implementation)", { noremap = tru
 vim.api.nvim_set_keymap('n', 'gr', "<Plug>(coc-references)", { noremap = true, silent = true });
 
 
+-- buffer navigation using shift and arrow keys
+vim.api.nvim_set_keymap('n', '<S-Left>', ':bp<CR>', { noremap = true, silent = true });
+vim.api.nvim_set_keymap('n', '<S-Right>', ':bn<CR>', { noremap = true, silent = true });
+
+
+

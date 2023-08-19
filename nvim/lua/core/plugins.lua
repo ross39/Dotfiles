@@ -21,6 +21,31 @@ return require('packer').startup(function(use)
   use 'nvim-lualine/lualine.nvim'
   use 'lewis6991/gitsigns.nvim'
   use 'navarasu/onedark.nvim'
+  use {
+    'wthollingsworth/pomodoro.nvim',
+    requires = 'MunifTanjim/nui.nvim',
+    config = function()
+        require('pomodoro').setup({
+            time_work = 90,
+            time_break_short = 7,
+            time_break_long = 20,
+            timers_to_long_break = 2
+        })
+    end
+}
+  use 'f-person/git-blame.nvim'
+
+  use {
+	"lukas-reineke/indent-blankline.nvim",
+	config = function()
+		opts = {}
+		-- Other blankline configuration here
+		require("indent_blankline").setup(require("indent-rainbowline").make_opts(opts))
+	end,
+	requires = {
+		"TheGLander/indent-rainbowline.nvim",
+	},
+}
 
   use {'nvim-orgmode/orgmode', config = function()
   require('orgmode').setup{}
